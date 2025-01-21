@@ -1,9 +1,11 @@
 import { PaymentPage } from '@/pages/PaymentPage';
-import { useNavigate } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 
 export default function Payment() {
-  const router = useRouter();
-  const { virtualAccount, bankName, amount } = router.query;
+  const [searchParams] = useSearchParams();
+  const virtualAccount = searchParams.get('virtual_account');
+  const bankName = searchParams.get('bank_name');
+  const amount = searchParams.get('amount');
 
   if (!virtualAccount || !bankName || !amount) {
     return null; // or show loading/error state

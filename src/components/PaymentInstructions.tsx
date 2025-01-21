@@ -6,7 +6,6 @@ import {
   CheckCircle2,
   Copy,
   Clock,
-  ArrowLeft,
   AlertCircle,
   CheckCircle,
   Loader2,
@@ -103,7 +102,6 @@ const bankInstructions: Record<string, PaymentStep[]> = {
 export const PaymentInstructions = ({
   virtualAccount,
   bankName,
-  amount,
   onBack,
 }: PaymentInstructionsProps) => {
   const [copied, setCopied] = useState(false);

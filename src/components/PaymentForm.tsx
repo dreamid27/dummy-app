@@ -16,7 +16,6 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { getInvoice, DelegasiError } from './services/delegasi.services';
 import { InvoiceDetails } from './InvoiceDetails';
-import type { GetInvoiceProps } from './services/delegasi.services';
 import { useInvoiceStore } from '@/store';
 import { useSearchParams } from 'react-router-dom';
 
