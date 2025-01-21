@@ -131,11 +131,12 @@ export const PaymentInstructions = ({
       await postWebhookBlibli(invoice);
       setIsSuccess(true);
       showSuccessNotification();
-
-      //redirect to home
       navigate('/');
     } catch (error) {
       console.error('Error confirming payment:', error);
+      toast.error('Terjadi kesalahan saat memproses permintaan Anda.', {
+        description: 'Silakan coba lagi.',
+      });
     } finally {
       setIsLoading(false);
     }
