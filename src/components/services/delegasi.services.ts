@@ -182,7 +182,8 @@ export const postWebhookBlibli = async (invoice: GetInvoiceProps) => {
   });
 
   if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
+    const errorData: DelegasiErrorResponse = await response.json();
+    throw new DelegasiError(errorData);
   }
 
   return response.json();
